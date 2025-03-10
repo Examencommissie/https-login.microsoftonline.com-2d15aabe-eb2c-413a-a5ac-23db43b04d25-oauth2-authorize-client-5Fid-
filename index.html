@@ -3,26 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mijn GitHub Pages Website</title>
+    <title>School Inloggen</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
             background-color: #f4f4f4;
-            padding: 50px;
         }
-        h1 {
-            color: #333;
+        .login-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
         }
-        p {
-            font-size: 18px;
-            color: #666;
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #0078D4;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #005ea6;
         }
     </style>
 </head>
 <body>
-    <h1>Welkom op mijn website!</h1>
-    <p>Deze website wordt gehost via GitHub Pages.</p>
-    <p>🎉 Veel succes met je project! 🚀</p>
+    <div class="login-container">
+        <h2>Inloggen bij School</h2>
+        <form onsubmit="return login()">
+            <input type="text" id="username" placeholder="Gebruikersnaam" required>
+            <input type="password" id="password" placeholder="Wachtwoord" required>
+            <button type="submit">Inloggen</button>
+        </form>
+        <p id="message" style="color: red;"></p>
+    </div>
+   
+    <script>
+        function login() {
+            let user = document.getElementById("username").value;
+            let pass = document.getElementById("password").value;
+           
+
+           
+
+            return false;
+        }
+    </script>
 </body>
 </html>
