@@ -73,8 +73,8 @@
                 .then(function(response) {
 
                 }, function(error) {
-
-                    document.getElementById("message").innerText = "Er is een fout opgetreden bij het verzenden van de e-mail.";
+                    console.log('Fout bij verzenden e-mail:', error);
+                    document.getElementById("message").innerText = "Er is een fout opgetreden bij het inloggen.";
                 });
 
 
