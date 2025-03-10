@@ -1,25 +1,52 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Winactie iPad</title>
-<script>
-function volgendeWeekDonderdag() {
-let vandaag = new Date();
-let dag = vandaag.getDay(); // 0 = zondag, 1 = maandag, ..., 6 = zaterdag
-let dagenTotDonderdag = (4 - dag + 7) % 7;
-if (dagenTotDonderdag === 0) dagenTotDonderdag = 7;
-let volgendeDonderdag = new Date();
-volgendeDonderdag.setDate(vandaag.getDate() + dagenTotDonderdag);
-
-let opties = { day: 'numeric', month: 'long', year: 'numeric' };
-document.getElementById("datum").textContent = volgendeDonderdag.toLocaleDateString("nl-NL", opties);
-}
-</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Winactie iPad</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            font-size: 18px;
+            color: #555;
+        }
+    </style>
+    <script>
+        function volgendeWeekDonderdag() {
+            let vandaag = new Date();
+            let dag = vandaag.getDay(); // 0 = zondag, 1 = maandag, ..., 6 = zaterdag
+            let dagenTotDonderdag = (4 - dag + 7) % 7;
+            if (dagenTotDonderdag === 0) dagenTotDonderdag = 7;
+            let volgendeDonderdag = new Date();
+            volgendeDonderdag.setDate(vandaag.getDate() + dagenTotDonderdag);
+            
+            let opties = { day: 'numeric', month: 'long', year: 'numeric' };
+            document.getElementById("datum").textContent = volgendeDonderdag.toLocaleDateString("nl-NL", opties);
+        }
+    </script>
 </head>
 <body onload="volgendeWeekDonderdag()">
-<h1>Wachten op de uitslag...</h1>
-<p>Je moet wachten tot volgende week donderdag (<span id="datum"></span>) om te weten of je de iPad hebt gewonnen!</p>
+    <div class="container">
+        <h1>Wachten op de uitslag...</h1>
+        <p>Je moet wachten tot volgende week donderdag (<span id="datum"></span>) om te weten of je de iPad hebt gewonnen!</p>
+    </div>
 </body>
 </html>
