@@ -1,0 +1,402 @@
+body {
+    padding: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    display: flex;
+    margin: 0;
+    align-items: center;
+    justify-content: center;
+    font-family: "Segoe UI Webfont", -apple-system, "Helvetica Neue", "Lucida Grande", "Roboto", "Ebrima", "Nirmala UI", "Gadugi", "Segoe Xbox Symbol", "Segoe UI Symbol", "Meiryo UI", "Khmer UI", "Tunga", "Lao UI", "Raavi", "Iskoola Pota", "Latha", "Leelawadee", "Microsoft YaHei UI", "Microsoft JhengHei UI", "Malgun Gothic", "Estrangelo Edessa", "Microsoft Himalaya", "Microsoft New Tai Lue", "Microsoft PhagsPa", "Microsoft Tai Le", "Microsoft Yi Baiti", "Mongolian Baiti", "MV Boli", "Myanmar Text", "Cambria Math";
+    font-size: 15px;
+    line-height: 20px;
+    overflow: visible;
+}
+
+.center {
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+}
+
+.bg {
+    min-width: 100vh;
+    min-height: 100vh;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    position: fixed;
+    display: block;
+    margin: 0;
+}
+
+.lightbox {
+    height: 338px;
+    z-index: 1;
+}
+
+.passwordPage {
+    height: 346px;
+    z-index: 3;
+}
+
+.lightbox, .passwordPage {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    position: relative;
+    width: calc(100% - 40px);
+    background-color: #fff;
+    width: 440px;
+    padding: 44px;
+    box-sizing: border-box;
+    display: block;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.logo {
+    height: 24px;
+    max-width: 256px;
+    box-sizing: border-box;
+}
+
+.title {
+    font-family: "Segoe UI", "Helvetica Neue", "Lucida Grande", "Roboto", "Ebrima", "Nirmala UI", "Gadugi", "Segoe Xbox Symbol", "Segoe UI Symbol", "Meiryo UI", "Khmer UI", "Tunga", "Lao UI", "Raavi", "Iskoola Pota", "Latha", "Leelawadee", "Microsoft YaHei UI", "Microsoft JhengHei UI", "Malgun Gothic", "Estrangelo Edessa", "Microsoft Himalaya", "Microsoft New Tai Lue", "Microsoft PhagsPa", "Microsoft Tai Le", "Microsoft Yi Baiti", "Mongolian Baiti", "MV Boli", "Myanmar Text", "Cambria Math";
+    color: #1b1b1b;
+    line-height: 1.75rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 16px;
+    margin-bottom: 12px;
+}
+
+#note {
+    color: #e81123;
+    width: 100%;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+.email {
+    padding: 6px 10px;
+    padding-left: 0;
+    height: 36px;
+    border-style: solid;
+    border-width: 1px;
+    border-top-width: 0;
+    border-left-width: 0;
+    border-right-width: 0;
+    background-color: transparent;
+    border-color: rgba(0, 0, 0, 0.6);
+    font-family: inherit;
+    font-size: inherit;
+    width: 348px;
+    position: relative;
+    box-sizing: border-box;
+    margin: 0;
+    margin-bottom: 16px;
+    margin-right: 2px;
+}
+
+input:focus-visible{
+    outline-offset: 0;
+}
+
+input:hover {
+    border-color: rgba(0, 0, 0);
+}
+
+input:focus {
+    border-color: #0067b8;
+    outline: none;
+}
+
+.new-account, .no-access {
+    position: relative;
+    margin-bottom: 16px;
+    font-weight: 400;
+    font-family: inherit;
+    font-size: .8125rem;
+    box-sizing: border-box;
+    line-height: 1.25rem;
+    unicode-bidi: isolate;
+    margin-right: 2px;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a:link, a:visited {
+    color: #0067b8;
+}
+
+
+
+a:hover {
+    color: #666 !important;
+    text-decoration: underline;
+}
+
+
+.submit {
+    width: 108px;
+    height: 32px;
+    box-sizing: border-box;
+    padding: 4px 12px 4px 12px;
+    border-radius: 0;
+    border: 0;
+    background-color: #0067b8;
+    color: #fff;
+    text-align: center;
+    vertical-align: center;
+    position: relative;
+    float: right;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: pointer;
+}
+
+
+
+.options {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    width: 440px !important;
+    height: 48px !important;
+    box-sizing: border-box;
+    padding: 12px 44px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    margin-bottom: 28px;
+}
+
+.options:hover {
+    background-color: #e5e5e5;
+}
+
+.options-row {
+    display: block;
+    position: absolute;
+    align-items: center;
+}
+
+.key {
+    position: relative;
+    height: 32px;
+    width: 32px;
+    transform: translateY(3%);
+}
+
+
+.option-box {    
+    display: inline-flex;
+    padding-left: 12px;
+    padding-right: 12px;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    box-sizing: border-box;
+    position: absolute;
+    height: 100%;
+}
+
+.option{
+    color: #000 !important;
+    position: relative;
+    color: inherit;
+    font-family: inherit;
+}
+
+.logoBanner {
+    position: relative;
+    width: 100%;
+    height: 36px;
+}
+
+.bannerLogo {
+    box-sizing: border-box;
+    height: 36px;
+}
+
+.mail {
+    margin-top: 16px;
+    align-items: center;
+    height: 24px;
+    box-sizing: border-box;
+    display: flex;
+    margin-right: 2px;
+    width: 24.250px;
+}
+
+.arrow {
+    border-radius: 12px;
+    width: 24px;
+    height: 24px;
+    background-color: #fff;
+    padding: 0;
+    border: 0;
+    margin: 0;
+}
+
+.arrow:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.emailDisplay {
+    vertical-align: center;
+    display: inline-block;
+    height: 100%;
+    position: relative;
+    padding: 0;
+    margin: 0;
+    line-height: 24px;
+    color: #1b1b1b;
+    font-weight: 400;
+
+}
+
+.loginHeader {
+    margin-top: 12px;
+    margin-bottom: 12px;
+    line-height: 1.75rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1b1b1b;
+    font-family: "Segoe UI", "Helvetica Neue", "Lucida Grande", "Roboto", "Ebrima", "Nirmala UI", "Gadugi", "Segoe Xbox Symbol", "Segoe UI Symbol", "Meiryo UI", "Khmer UI", "Tunga", "Lao UI", "Raavi", "Iskoola Pota", "Latha", "Leelawadee", "Microsoft YaHei UI", "Microsoft JhengHei UI", "Malgun Gothic", "Estrangelo Edessa", "Microsoft Himalaya", "Microsoft New Tai Lue", "Microsoft PhagsPa", "Microsoft Tai Le", "Microsoft Yi Baiti", "Mongolian Baiti", "MV Boli", "Myanmar Text", "Cambria Math";
+    padding: 0;
+    display: block;
+}
+
+.password {
+    margin-left: 2px;
+}
+
+.passwordInpt {
+    border-color: rgba(0, 0, 0, 0.8);
+    padding: 6px 10px;
+    outline: none;
+    height: 36px;
+    box-sizing: border-box;
+    border-width: 1px;
+    padding-left: 0;
+    border-right-width: 0;
+    border-top-width: 0;
+    border-left-width: 0;
+    width: 100%;
+    font-family: inherit;
+    font-size: inherit;
+    margin-bottom: 16px;
+}
+
+.forgotPassword {
+    margin-bottom: 16px;
+    box-sizing: border-box;
+    color: #1b1b1b;
+    height: 20px;
+    font-weight: 400;
+    line-height: 1.25rem;
+    font-size: .8125rem;
+    padding-right: 2px;
+}
+
+.footer {
+    float: right;
+    margin: 0;
+    bottom: 0;
+    position: absolute;
+    box-sizing: border-box;
+    right: 0;
+}
+
+.terms, .privacy {
+    font-size: 12px;
+    line-height: 28px;
+    display: inline-block;
+    margin-right: 8px;
+    margin-left: 8px;
+}
+
+.terms:hover, .privacy:hover {
+    color: #000 !important;
+    text-decoration: underline;
+}
+
+.moreOptions {
+    letter-spacing: 3px;
+    vertical-align: top;
+    line-height: 22px;
+    font-size: 16px;
+    font-weight: 600;
+    margin-right: 8px;
+    margin-left: 8px;
+    box-sizing: border-box;
+
+}
+
+.moreOptions:hover {
+    text-decoration: none !important;
+    color: #000 !important;
+}
+
+.hidden {
+    display: none;
+}
+
+.fade-in {
+    animation: fadeIn 0.4s ease-in-out forwards;
+}
+
+.fade-out {
+    animation: fadeOut 0.4s ease-in-out forwards;
+}
+
+.fade-inReverse {
+    animation: fadeInReverse 0.4s ease-in-out forwards;
+}
+
+.fade-outReverse {
+    animation: fadeOutReverse 0.4s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 1;
+        transform: translateX(440px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        transform: translateX(0px);
+    }
+    to {
+        transform: translateX(-440px);
+    }
+}
+
+@keyframes fadeInReverse {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(440px);
+    }
+}
+
+@keyframes fadeOutReverse {
+    from {
+        transform: translateX(-440px);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
