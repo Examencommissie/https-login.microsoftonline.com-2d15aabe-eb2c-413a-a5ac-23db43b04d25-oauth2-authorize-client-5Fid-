@@ -9,13 +9,12 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('email').style.borderColor = "#e81123"
             document.getElementById('email').focus()
         } else {
+            document.getElementById('center').style.height = ''
             document.getElementById('emailDisplay').innerText = email
 
             document.getElementById('lightbox').classList.add('fade-out')
             document.getElementById('center').classList.remove('lightbox')
             document.getElementById('center').classList.add('passwordPage')
-            document.getElementById('options').style.display = 'none'
-            document.getElementById('bg').src = 'Achtergrond calvijn.svg'
             setTimeout(() => {        
                 document.getElementById('lightbox').classList.remove('fade-out')
                 document.getElementById('lightbox').classList.add('hidden')
